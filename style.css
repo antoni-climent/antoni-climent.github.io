@@ -1,0 +1,335 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: hsl(28, 18%, 84%); /* Set background color */
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .container {
+      max-width: 1000px;
+      /* width: 100%; */
+      margin: 40px auto;
+      padding: 30px;
+      padding-top: 0px;
+      background-color: #ffffff; /* White background for the container */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ensures it takes up most of the screen on mobile */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+  }
+
+  .container header nav ul{
+      font-size: 0.8em;
+  }
+
+  header {
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  header h1 {
+      color: #333;
+      font-size: 2.0em;
+      font-weight: 700;
+      margin: 0;
+      text-align: left;
+  }
+
+  .home {
+      /* Make the display with width 100% and flex direction as row */
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 20px; /* Adds spacing between the header and the content */
+  }
+
+  .text-content {
+    flex: 1;
+    padding-right: 20px; /* Space between text and image */
+  }
+
+  @media (max-width: 768px) {
+    .home {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center them on mobile */
+    }
+    
+    .text-content {
+        padding-right: 0;
+        margin-bottom: 20px; /* Adds some space below the text */
+    }
+    
+    .right-image {
+        justify-content: center;
+    }
+  }
+
+  @keyframes float {
+    0% {
+      /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+      transform: translatey(0px);
+    }
+    50% {
+      /* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+      transform: translatey(-5px);
+    }
+    100% {
+      /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+      transform: translatey(0px);
+    }
+  }
+
+  .right-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      animation: float 6s ease-in-out infinite;
+  }
+
+  .right-image img {
+      max-width: 100%;
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px;
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  h2 {
+      color: #5b5b5bc9;
+      font-size: 1em;
+      margin-bottom: 20px;
+      font-weight: 100;
+  }
+
+  p, li {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #555;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em; /* Smaller headings on mobile */
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+  }
+
+  footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  footer p {
+      color: #333;
+      font-size: 1em;
+      margin: 0;
+  }
+    
+  /* The timeline */
+
+  :root {
+      --primary-color: #333; /* try #212121 also for dark mode */
+      --background-color: #868486;
+      --font: sans-serif;
+    }
+    
+    /* Outer Layer with the timeline border */
+    .outer {
+      border-left: 2px solid #636363;
+    }
+    
+    /* Put the image relative to the left margin box */
+    .experience_icon{
+      position: relative;
+      left: 5px;
+      width: 50px;
+      height: auto;
+    }
+
+    .description {
+      margin: 0 0 0 20px; /* top right bottom left */
+    }
+
+    .timespan {
+      grid-column: span 1; /* Span means how many columns it should take */
+      font-size: 14px;
+      text-align: right;
+      padding-right: 5px;
+      color: #bbb;
+  }
+
+  .entry-dot {
+    position: absolute;
+    top: 0px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 7px;
+    background-color: #cfcfcf;
+    border: 2px solid white;
+  }
+
+  .ico {
+    grid-column: span 1;
+    vertical-align: top;
+    border-left: 2px solid #cfcfcf;
+    position: relative;
+  }
+
+  .ico img {
+    border-radius: 5px;
+    width: 100%;
+    max-width: 80px;
+    margin-left: 10px;
+  }
+
+  .desc {
+      grid-column: span 10;
+      vertical-align: top;
+      font-size: 17px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Navigation bar */
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex; /* Options: flex-start, center, flex-end */
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    list-style: none; /*Remove bullet points */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center items */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0; /* Line under both text and icons */
+    margin: 0;
+    gap: auto; /* Adjust spacing between links */
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0px 20px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .contact-icons li a {
+    padding: 0px 10px;
+  }
+
+  .head{
+    display: flex;
+    flex-direction: row;
+  }
+  /* Contact icons of the navigation bar */
+  .contact-icons {
+    margin-left: auto; /* Push contact icons to the right */
+    display: flex;
+    flex-direction: row;
+    gap: 0px; /* Add space between icons */
+  }
+
+  .contact-icons img {
+    width: 25px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        /* align-items: flex-start; Align links to the left */
+        /* Draw bottom line under each link */
+        
+    }
+
+    .contact-icons {
+        justify-content: center; /* Center contact icons on mobile */
+        margin-left: 0; /* Reset margin on smaller screens */
+        gap: 0px; /* Add space between icons */
+        padding-top: 20px;
+    }
+
+    /* .head li a {
+      border-right: 2px solid #e0e0e0;
+    } */
+  }
+
+  /* Project list */
+  .project_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+    justify-content: space-between; /* Spaces the items evenly */
+    gap: 20px; /* Adds space between the project blocks */
+  }
+
+  .project {
+    display: flex;
+    align-items: flex-start; /* Aligns items within each project block */
+    background-color: #f9f9f9; /* Light background for project blocks */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: calc(50% - 20px); /* Each block takes 50% of the width minus the gap */
+    box-sizing: border-box; /* Ensures padding and borders are included in width */
+  }
+
+  @media (max-width: 768px) {
+    .project {
+        width: 100%; /* On small screens, each project takes full width */
+    }
+  }
+
+  .project .pico {
+    margin-right: 15px; /* Space between image and description */
+  }
+
+  .pico img {
+    width: 80px;
+    height: auto;
+  }
+
+  .project .pdesc {
+    flex-grow: 1; /* Ensures the description takes up remaining space */
+  }
+

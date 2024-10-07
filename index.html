@@ -1,1 +1,112 @@
-Hello World
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=0.5" />
+<link rel="shortcut icon" href="#" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antoni Climent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <div class="head">
+              <li>
+                <a href="index.html" style="border-right: 2px solid #e0e0e0"
+                  >HOME</a
+                >
+              </li>
+              <li>
+                <a href="about.html" style="border-right: 2px solid #e0e0e0"
+                  >ABOUT
+                </a>
+              </li>
+              <li><a href="projects.html">PROJECTS</a></li>
+            </div>
+            <!-- Tree contact icons for github, mail and twitter -->
+            <div class="contact-icons">
+              <li>
+                <a href="mailto:tonicliment98@gmail.com"
+                  ><img
+                    src="assets/mail.webp"
+                    alt="mail"
+                    style="width: 25px; height: 25px"
+                /></a>
+              </li>
+              <li>
+                <a href="https://github.com/antoni-climent"
+                  ><img
+                    src="assets/git.webp"
+                    alt="github"
+                    style="width: auto; height: 25px"
+                /></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/antoni-climent"
+                  ><img
+                    src="assets/linkedin.jpg"
+                    alt="linkedin"
+                    style="width: auto; height: 25px; border-radius: 5px"
+                /></a>
+              </li>
+            </div>
+            <!-- <li><a href="blog.html">BLOG</a></li> -->
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <!-- Header ends here -->
+
+        <div class="home">
+          <div class="text-content">
+            <h1>TONI'S WEB PAGE</h1>
+            <h2>Computer Engineer / AI Expert</h2>
+            <p>
+              This is the home page. Feel free to explore the tabs to learn more
+              about me and my projects!
+            </p>
+
+            <!-- ASCII animation -->
+            <pre id="ascii-animation">
+                  /\_/\  
+                  ( o.o ) 
+                  > ^ <
+            </pre>
+          </div>
+
+          <div class="right-image">
+            <img src="assets/boy.png" alt="right photo" />
+          </div>
+        </div>
+
+        <script>
+          const frames = [
+            `      /\\_/\\\n     ( o.o )\n      > ^ < `,
+            `     /\\_/\\\n    ( o.o ) \n     > ^ <  `,
+            `    /\\_/\\\n   ( o.o )  \n    > ^ <   `,
+            `   /\\_/\\ \n  ( o.o )   \n   > ^ <    `,
+            `  /\\_/\\  \n ( o.o )    \n  > ^ <     `,
+            ` /\\_/\\   \n( o.o )     \n > ^ <      `,
+            `  /\\_/\\    \n ( o.o )    \n  > ^ <     `,
+            `   /\\_/\\   \n  ( o.o )   \n   > ^ <    `,
+            `    /\\_/\\  \n   ( o.o )  \n    > ^ <   `,
+            `     /\\_/\\ \n    ( o.o ) \n     > ^ <  `,
+          ];
+
+          let i = 0;
+          setInterval(() => {
+            document.getElementById("ascii-animation").textContent = frames[i];
+            i = (i + 1) % frames.length;
+          }, 200);
+        </script>
+      </main>
+      <footer>
+        <p>&copy; 2024 Toni's Webpage</p>
+      </footer>
+    </div>
+  </body>
+</html>
