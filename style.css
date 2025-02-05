@@ -2,7 +2,7 @@
   :root {
     --primary-color: #ffffff;
     --background-color: #383838;
-    --container-bg: #2d2d2d;
+    --container-bg: #2d2d2d; /* In rgb is 45, 45, 45 */
     --text-color: #e0e0e0;
     --font: sans-serif;
 }
