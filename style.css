@@ -1,347 +1,251 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-  :root {
-    --primary-color: #ffffff;
-    --background-color: #383838;
-    --container-bg: #2d2d2d; /* In rgb is 45, 45, 45 */
-    --text-color: #e0e0e0;
-    --font: sans-serif;
+:root {
+
+  /*Title color*/
+  /* --title-color: #FF73BA; */
+  --box-color: #9B7EBD;
+  --background-color: #3B1E54;
+
+  /*Color of the box headers*/
+  --header-color: #000000;
+  --header-background: #D4BEE4;
+
+  /*Color of the interior of the box*/
+  --box-color: #9B7EBD;
 }
-  html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--background-color); /* Set background color */
-      color: var(--text-color); /* Set text color */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
 
-  .container {
-      max-width: 1000px;
-      /* width: 100%; */
-      margin: 40px auto;
-      padding: 30px;
-      padding-top: 0px;
-      background-color: var(--container-bg); /* White background for the container */
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-  }
+body {
+  width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+  font-size: 18px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
 
-  @media (max-width: 768px) {
-    .container {
-        width: 90%; /* Ensures it takes up most of the screen on mobile */
-        padding: 20px; /* Adjust padding for smaller screens */
-    }
-  }
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 50px;
+  background: var(--background-color);
+  border: 2px solid #ccc;
+  /* And/or this line */
+}
 
-  .container header nav ul{
-      font-size: 0.8em;
-  }
+.topStyle {
+  background: var(--box-color);
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  padding: 30px 10px;
+  margin: 0px 0;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  background-image: url('assets/future.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--header-color);
+  text-shadow:
+    -1px -1px 0 #ffffff,  
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
 
-  header {
-      text-align: center;
-      margin-bottom: 10px;
-  }
+.bottomStyle {
+  background: var(--box-color);
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 10px;
+  margin: 0px 0;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-  header h1 {
-      color: var(--text-color);
-      font-size: 2.0em;
-      font-weight: 700;
-      margin: 0;
-      text-align: left;
-  }
+.boxStyle {
+  background: var(--box-color);
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 0px;
+  margin: 10px 0;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .home {
-      /* Make the display with width 100% and flex direction as row */
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      align-items: flex-start;
-      margin-top: 20px; /* Adds spacing between the header and the content */
-  }
 
-  .text-content {
-    flex: 1;
-    padding-right: 20px; /* Space between text and image */
-  }
 
-  @media (max-width: 768px) {
-    .home {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center them on mobile */
-    }
-    
-    .text-content {
-        padding-right: 0;
-        margin-bottom: 20px; /* Adds some space below the text */
-    }
-    
-    .right-image {
-        justify-content: center;
-    }
-  }
+/* Layout grid */
+#indexGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "blog body projects"
+    "blog about projects"
+    "blog about projects"
+    "blog about contact";
+  gap: 12px;
+}
 
-  @keyframes float {
-    0% {
-      /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
-      transform: translatey(0px);
-    }
-    50% {
-      /* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
-      transform: translatey(-5px);
-    }
-    100% {
-      /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
-      transform: translatey(0px);
-    }
-  }
+#blogBody {
+  grid-column: 2/4; /* This means it will take the first column and span to the second column */
+  grid-row: 1 / 5; /* This means it will take the first row and span to the fourth row */
+}
+/* Grid area assignments */
+#blogNavigation {
+  grid-area: blog;
+}
 
-  .right-image {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-      animation: float 6s ease-in-out infinite;
-  }
+#indexBody {
+  grid-area: body;
+}
 
-  .right-image img {
-      max-width: 100%;
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 8px;
-      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  }
+#indexUpdates {
+  grid-area: updates;
+}
 
-  h2 {
-      color: var(--text-color);
-      font-size: 1em;
-      margin-bottom: 20px;
-      font-weight: 100;
-  }
+#about {
+  grid-area: about;
+}
 
-  p, li {
-      font-size: 1.1em;
-      line-height: 1.8em;
-      color: var(--text-color);
-  }
+#projects {
+  grid-area: projects;
+}
 
-  @media (max-width: 768px) {
-    h1 {
-        font-size: 1.5em; /* Smaller headings on mobile */
-    }
+#usefulLinks {
+  grid-area: usefulLinks;
+}
 
-    h2 {
-        font-size: 0.9em;
-    }
+#indexcontact {
+  grid-area: contact;
+}
 
-    p, li {
-        font-size: 1em;
-    }
-  }
+/* Nested layout inside indexBody */
+#indexBodyGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+}
 
-  footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px 0;
-      color: var(--text-color);
-      background-color: var(--background-color);
-      width: 100%;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  }
+#indexBodyMain {
+  grid-column: 1 / 2; /* This means it will take the first column and span to the second column */
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+}
 
-  footer p {
-      color: var(--text-color);
-      font-size: 1em;
-      margin: 0;
-  }
-    
-  /* The timeline */
-    
-    /* Outer Layer with the timeline border */
-    .outer {
-      border-left: 2px solid #636363;
-    }
-    
-    /* Put the image relative to the left margin box */
-    .experience_icon{
-      position: relative;
-      left: 5px;
-      width: 50px;
-      height: auto;
-    }
+#indexStatus {
+  grid-column: 2 / 3;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+}
 
-    .description {
-      margin: 0 0 0 20px; /* top right bottom left */
-    }
+/* Header and Footer styling */
+#header{
+  text-align: center;
+}
 
-    .timespan {
-      grid-column: span 1; /* Span means how many columns it should take */
-      font-size: 14px;
-      text-align: right;
-      padding-right: 5px;
-      color: #bbb;
-  }
+.lefttitle {
+  color: var(--header-color);
+  background: var(--header-background);
+  padding: 4px;
+  padding-bottom: 0px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  letter-spacing: 2px;
+}
 
-  .entry-dot {
-    position: absolute;
-    top: 0px;
-    left: -8px;
-    width: 10px;
-    height: 10px;
-    border-radius: 7px;
-    background-color: #cfcfcf;
-    border: 2px solid white;
-  }
+.lefttitle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('assets/pc.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
 
-  .ico {
-    grid-column: span 1;
-    vertical-align: top;
-    border-left: 2px solid #cfcfcf;
-    position: relative;
-  }
+.pico img{
+  width: 40px;    /* Adjust as needed */
+  height: auto;   /* Maintain aspect ratio */
+}
 
-  .ico img {
-    border-radius: 5px;
-    width: 100%;
-    max-width: 80px;
+.pico { /*Display in a single row*/
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 0px;
+}
+
+.project {
+    margin-top: 10px;
+    border-bottom: 1px solid #090404;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.project_list {
     margin-left: 10px;
-  }
-
-  .desc {
-      grid-column: span 10;
-      vertical-align: top;
-      font-size: 17px;
-      padding-left: 20px;
-      padding-bottom: 20px;
-  }
-
-  .row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-  /* Navigation bar */
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex; /* Options: flex-start, center, flex-end */
-    margin-bottom: 20px;
-  }
-
-  nav ul {
-    list-style: none; /*Remove bullet points */
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Vertically center items */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #444;; /* Line under both text and icons */
-    margin: 0;
-    gap: auto; /* Adjust spacing between links */
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: block;
-    padding: 0px 20px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-
-  .contact-icons li a {
-    padding: 0px 10px;
-  }
-
-  .head{
-    display: flex;
-    flex-direction: row;
-  }
-  /* Contact icons of the navigation bar */
-  .contact-icons {
-    margin-left: auto; /* Push contact icons to the right */
-    display: flex;
-    flex-direction: row;
-    gap: 0px; /* Add space between icons */
-  }
-
-  .contact-icons img {
-    width: 25px;
-    height: auto;
-  }
-
-  @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack navigation links vertically */
-        /* align-items: flex-start; Align links to the left */
-        /* Draw bottom line under each link */
-        
-    }
-
-    .contact-icons {
-        justify-content: center; /* Center contact icons on mobile */
-        margin-left: 0; /* Reset margin on smaller screens */
-        gap: 0px; /* Add space between icons */
-        padding-top: 20px;
-    }
-
-    /* .head li a {
-      border-right: 2px solid #e0e0e0;
-    } */
-  }
-
-  /* Project list */
-  .project_list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
-    justify-content: space-between; /* Spaces the items evenly */
-    gap: 20px; /* Adds space between the project blocks */
-  }
-
-  .project {
-    display: flex;
-    align-items: flex-start; /* Aligns items within each project block */
-    background-color: var(--background-color); /* Light background for project blocks */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    width: calc(50% - 20px); /* Each block takes 50% of the width minus the gap */
-    box-sizing: border-box; /* Ensures padding and borders are included in width */
-  }
-
-  @media (max-width: 768px) {
-    .project {
-        width: 100%; /* On small screens, each project takes full width */
-    }
-  }
-
-  .project .pico {
-    margin-right: 15px; /* Space between image and description */
-  }
-
-  .pico img {
-    width: 80px;
-    height: auto;
-  }
-
-  .project .pdesc {
-    flex-grow: 1; /* Ensures the description takes up remaining space */
-  }
-
-
-  a {
-    color: #7fbfff; /* Bright blue */
-    text-decoration: none;
-    font-weight: 600;
 }
 
-a:hover {
-    color: #4bb7ff; /* Slightly lighter blue on hover */
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    height: 100px;            /* ensure it fills the grid area */
+    gap: 40px;               /* optional: space between icons */
+}
+
+.textBox{
+    padding-left: 10px;
+}
+
+/* Background animation */
+
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: 100px 0px;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    45deg,
+    #3B1E54,
+    #9B7EBD 10%,
+    #EEEEEE 50%
+  );
+  background-size: 100px 100px;
+  animation: move-it 2s linear infinite;
+  pointer-events: none;
+}
+
+.entry.row {
+  border-top: 1px solid #000000;
+  padding: 10px;
+}
+
+.ico{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blog-date {
+  font-size: 0.85em;
+  color:rgb(53, 53, 53);
 }

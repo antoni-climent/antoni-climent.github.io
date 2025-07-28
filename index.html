@@ -1,128 +1,196 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=0.5" />
-<link rel="shortcut icon" href="#" />
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antoni Climent</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <header>
-        <nav>
-          <ul>
-            <div class="head">
-              <li>
-                <a href="index.html" style="border-right: 2px solid #e0e0e0">HOME</a>
-              </li>
-              <li>
-                <a href="about.html" style="border-right: 2px solid #e0e0e0">ABOUT</a>
-              </li>
-              <li><a href="projects.html">PROJECTS</a></li>
-            </div>
-            <div class="contact-icons">
-              <li>
-                <a href="mailto:tonicliment98@gmail.com">
-                  <img src="assets/mail.png" alt="mail" style="width: 25px; height: 25px" />
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/antoni-climent">
-                  <img src="assets/git.png" alt="github" style="width: auto; height: 25px" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/antoni-climent">
-                  <img src="assets/linkedin.jpg" alt="linkedin" style="width: auto; height: 25px; border-radius: 5px" />
-                </a>
-              </li>
-            </div>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <div class="home">
-          <div class="text-content">
-            <h1>Antoni Climent Muñoz</h1>
-            <h2>Computer Engineer / AI Expert</h2>
-            <p>
-              This is the home page. Feel free to explore the tabs to learn more
-              about me and my projects!
-            </p>
-
-            <pre id="ascii-animation">
-                  /\_/\  
-                  ( o.o ) 
-                  > ^ <
-            </pre>
-          </div>
-
-          <canvas id="matrix-canvas" width="350" height="350"></canvas>
+<body>
+    <div class="main">
+        <div id="header" class="topStyle">
+            <h1>Antoni Climent</h1>
         </div>
 
-        <script>
-          const frames = [
-            `      /\\_/\\\n     ( o.o )\n      > ^ < `,
-            `     /\\_/\\\n    ( o.o ) \n     > ^ <  `,
-            `    /\\_/\\\n   ( o.o )  \n    > ^ <   `,
-            `   /\\_/\\ \n  ( o.o )   \n   > ^ <    `,
-            `  /\\_/\\  \n ( o.o )    \n  > ^ <     `,
-            ` /\\_/\\   \n( o.o )     \n > ^ <      `,
-            `  /\\_/\\    \n ( o.o )    \n  > ^ <     `,
-            `   /\\_/\\   \n  ( o.o )   \n   > ^ <    `,
-            `    /\\_/\\  \n   ( o.o )  \n    > ^ <   `,
-            `     /\\_/\\ \n    ( o.o ) \n     > ^ <  `,
-          ];
+        <div id="indexGrid">
+            <div id="blogNavigation" class="boxStyle">
+                <div id="leftcolumn">
 
-          let i = 0;
-          setInterval(() => {
-            document.getElementById("ascii-animation").textContent = frames[i];
-            i = (i + 1) % frames.length;
-          }, 200);
+                    <div class="lefttitle">
+                        Blog entries <img src="assets/min_max_close.png" align="right" height="15">
+                    </div>
+                </div>
+                <div class="box">
+                    <ul>
+                        <li><a href="blog.html#first-entry">Primera entrada del blog</a></li>
+                        <li><a href="blog.html#ai-programming">Cómo usar la IA para programar</a></li>
+                    </ul>
+                </div>
+            </div>
 
-          // Matrix code animation
-          const canvas = document.getElementById('matrix-canvas');
-          const ctx = canvas.getContext('2d');
+            <div id="indexBody" class="boxStyle">
+                <div class="lefttitle">
+                    Welcome <img src="assets/min_max_close.png" align="right" height="15">
+                </div>
+                <div id="indexBodyGrid">
+                    <div class="textBox">
+                        <p>Welcome to my personal web site!!! Here you can find various projects that I've been working
+                            on, as well as info about my career and some blog posts.
+                            This is a space where I share my passion for technology, neural networks, and creativity.
+                            Feel free to explore and connect with me!</p>
+                    </div>
+                    <div id="indexStatus" class="boxStyle">
+                        <div class="image-container">
+                            <img src="assets/pokemon.gif" height="150" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          const width = canvas.width;
-          const height = canvas.height;
 
-          const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?';
-          const columns = Math.floor(width / 20);
-          const drops = [];
+            <div id="about" class="boxStyle">
+                <div class="lefttitle">
+                    About <img src="assets/min_max_close.png" align="right" height="15">
+                </div>
+                <div class="textBox">
+                    <p>Hi, I'm Toni. I'm passionate about technology, and I love training
+                        neural nets. They bring me hope for a more equitative and peaceful
+                        world.
+                        I let here some information about my career.
+                    </p>
 
-          for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
-          }
+                </div>
 
-          function drawMatrix() {
-            ctx.fillStyle = 'rgba(45, 45, 45, 0.5)';
-            ctx.fillRect(0, 0, width, height);
+                <!-- Timeline Section -->
+                <div class="entry row">
 
-            ctx.fillStyle = '#0F0';
-            ctx.font = '15px monospace';
+                    <div class="ico">
+                        <img src="assets/viu.png" height="50px" />
+                        <div class="timespan" style="margin-left: 10px;">2023-2024</div>
+                    </div>
 
-            for (let i = 0; i < drops.length; i++) {
-              const text = chars[Math.floor(Math.random() * chars.length)];
-              ctx.fillText(text, i * 20, drops[i] * 20);
+                    <div class="desc">
+                        I did my masters at
+                        <a href="https://www.universidadviu.com/es/master-inteligencia-artificial">VIU</a>, where I
+                        finished making a thesis to compare and improve fine
+                        tuning techniques for LLMs, aplied to social media toxicity
+                        detection.
 
-              if (drops[i] * 20 > height && Math.random() > 0.975) {
-                drops[i] = 0;
-              }
+                    </div>
+                </div>
 
-              drops[i]++;
-            }
-          }
+                <div class="entry row">
 
-          setInterval(drawMatrix, 70);
-        </script>
-      </main>
-      <footer>
-        <p>&copy; 2025 Toni's Webpage</p>
-      </footer>
+                    <div class="ico">
+                        <img src="assets/leitat.png" height="50px" />
+                        <div class="timespan" style="margin-left: 10px;">2021-2024</div>
+                    </div>
+
+                    <div class="desc">
+                        I am currently working at
+                        <a href="https://leitat.org/">Leitat Technological Center</a> within
+                        the AI team. We are working on projects of all kinds, from computer
+                        vision to NLP and forecasting.
+                    </div>
+                </div>
+
+                <div class="entry row">
+
+                    <div class="ico">
+                        <img src="assets/upc.png" height="50px" />
+                        <div class="timespan" style="margin-left: 10px;">2016-2020</div>
+                    </div>
+
+                    <div class="desc">
+                        I studied at Universitat Politècnica de Catalunya (UPC), and
+                        published a paper titled
+                        <a
+                            href="https://www.researchgate.net/publication/355216520_Applying_and_Verifying_an_Explainability_Method_Based_on_Policy_Graphs_in_the_Context_of_Reinforcement_Learning">"Applying
+                            and Verifying an Explainability Method Based on Policy
+                            Graphs in the Context of Reinforcement Learning"</a>, within a research group called
+                        <a href="https://hpai.bsc.es/">HPAI</a>.
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects" class="boxStyle">
+                <div class="lefttitle">
+                    Projects <img src="assets/min_max_close.png" align="right" height="15">
+                </div>
+
+                <div class="scrollable-project-list" style="overflow-y: auto; padding-right: 10px; padding-left: 10px;">
+                    <!-- <div class="project_list"> -->
+
+                    <div class="project">
+
+                        <div class="pico">
+                            <img src="assets/llm_calculator.webp" alt="llm_calculator" />
+                            <p>LLM Calculator</p>
+                        </div>
+                        <div class="pdesc">
+                            <a href="https://github.com/antoni-climent/llm_calculator/tree/main">Llm_calculator</a>
+                            is a project that uses local llm zephyr to extract the information
+                            required for a basic operation (such as sum or multiply) from a
+                            prompt, to later perform the operation and returns the result to
+                            the user.
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="pico">
+                            <img src="assets/face_cartoon.jpg" alt="cartoon_face" />
+                            <p>EmotionRecognition</p>
+                        </div>
+                        <div class="pdesc">
+                            In
+                            <a href="https://github.com/antoni-climent/EmotionRecognition">EmotionRecognition</a>
+                            I trained an image classifier to recognize the emotion that a
+                            person's face is showing. The inference is performed in real-time
+                            using the webcam.
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="pico">
+                            <img src="assets/leds.jpg" alt="leds" />
+                            <p>RoomLeds</p>
+                        </div>
+                        <div class="pdesc">
+                            <a href="https://github.com/antoni-climent/roomLeds">RoomLeds</a>
+                            is a project that implements several light patterns to be executed
+                            in a led strip, and allows you to controll it via a infrared
+                            remote controller.
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+
+            <div id="indexcontact" class="boxStyle">
+                <div class="lefttitle">
+                    Contact me <img src="assets/min_max_close.png" align="right" height="15">
+                </div>
+                <div class="contact-icons">
+
+                    <a href="mailto:tonicliment98@gmail.com"><img src="assets/mail.png" alt="mail"
+                            style="width: auto; height: 59px" /></a>
+
+                    <a href="https://github.com/antoni-climent"><img src="assets/git.png" alt="github"
+                            style="width: auto; height: 50px" /></a>
+
+                    <a href="https://www.linkedin.com/in/antoni-climent"><img src="assets/linkedin.jpg" alt="linkedin"
+                            style="width: auto; height: 50px; border-radius: 5px" /></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="bottomStyle">
+            <p>© Antoni Climent 2025–2025 • Coded With Love</p>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
