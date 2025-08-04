@@ -1,55 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog - Antoni Climent</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-        <div id="header" class="topStyle">
-            <h1>Antoni Climent</h1>
+      <div id="header" class="topStyle">
+        <h1>Antoni Climent</h1>
+      </div>
+      <div id="blogBody" class="boxStyle">
+        <div class="lefttitle">
+          Blog Posts
+          <img src="assets/min_max_close.png" align="right" height="15" />
         </div>
-        <div id="indexGrid">
-            <div id="blogNavigation" class="boxStyle">
-                <div class="lefttitle">
-                    Blog entries <img src="assets/min_max_close.png" align="right" height="15">
-                </div>
-                <div class="box">
-                    <ul>
-                        <li><a href="#first-entry">Primera entrada del blog</a></li>
-                        <li><a href="#ai-programming">Cómo usar la IA para programar</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="blogBody" class="boxStyle">
-                <div class="lefttitle">
-                    Blog Posts <img src="assets/min_max_close.png" align="right" height="15">
-                </div>
-                <div class="textBox">
+        <div class="textBox">
+          <h2 id="videogamedev">Game dev experience</h2>
+          <p><span class="blog-date">16-07-2025</span></p>
+          <p>
+            I never imagined that developing video games would feel this good.
+            Just recently I participated in a Jam with my friend @Nekkabi, and
+            had the opportunity to code for the first time in Godot. It is this
+            open-source game engine that purist developers use to develop their
+            indie games. I love the idea of using open-source software for
+            developing, it creates an amazing network of people and reusable
+            code that empowers every individual, but we will talk about it in a
+            different post. I really enjoyed the experience of programming video
+            games, it reminded me of web development, in the sense that you can
+            see instantly on the screen the changes that you do in the code
+            (unlike in AI development, where sometimes you have to go through
+            various training epochs to see a metric number change a decimal
+            point). It brings instant satisfaction and allows you to iterate
+            fast, going for the next challenge. It wasn't an easy path though,
+            the way Godot uses the scenes for everything was tricky to grasp at
+            first. Not because of the concept, but because of the interface and
+            the way scenes are displayed. Scenes are modular containers that
+            hold everything: characters, animations, sounds, logic, etc, think
+            of them as self-contained levels or components. Also, to run a
+            specific part of the game, you first need to set the right scene as
+            the entry point by selecting it in the left menu. At first,
+            navigating the menus in Godot felt disorganized, but once you get
+            used to it, it starts to make sense. We uploaded the video game in
+            itch.io, a platform where developers can put their creations, and
+            allow people to play it from the browser. You can try it here:
+            https://nekkabi.itch.io/project-chain-healing. It is a puzzle game,
+            where you are an antidote and have to move viruses and bacteria to
+            start a chain explosion reaction, with the objective of exploding
+            all the microbes. Here you can see a screenshot.
+          </p>
+          <img src="assets/chain_heal.png" width="60%" />
+          <p>
+            For now it has 15 levels, but we are planning on improving and
+            uploading it to steam! I will keep you informed.
+          </p>
 
-                    <h2 id="ai-programming">Cómo usar la IA para programar</h2>
-                    <p><span class="blog-date">16-07-2025</span></p>
-                    <p>
-                         
-                    </p>
-
-                    <h2 id="first-entry">Primera entrada del blog</h2>
-                    <p><span class="blog-date">15-07-2025</span></p>
-                    <p>
-                        Buenas, soy Toni. Este blog va a ser muy heterogéneo, ya que me gustaría compartir tanto algunas reflexiones, como algunos posts más técnicos relacionados con Inteligencia Artificial. 
-                        Me apasionan temas de todo tipo, desde la sicología hasta la informática, pasando por la biología, química, física, matemáticas, economía, etc. Pienso que estamos en un mundo demasiado
-                        interesante y diverso como para ceñirte a estudiar y especializarte en un solo tema, así que disfruto mucho leyendo explorando sobre todo tipo de tópicos.
-                    </p>
-                    
-
-                </div>
-            </div>
+          <h2 id="intro">Introduction</h2>
+          <p><span class="blog-date">15-07-2025</span></p>
+          <p>
+            Hi, my name is Toni. In this blog I will put some thoughts and
+            experiences, with also some technical posts related to artificial
+            intelligence. I love all kinds of topics, from psychology to
+            computer science, going through biology, chemistry, physics,
+            mathematics, economy and more. I think that we are in a world too
+            interesting to focus on a single topic to explore. I love reading,
+            discovering new things and have deep conversations, and my hope is
+            that I can transmit a little bit of my passion in this posts.
+          </p>
         </div>
-        <div id="footer" class="bottomStyle">
-            <p>© Antoni Climent 2025–2025 • Coded With Love</p>
-        </div>
+      </div>
+      <div id="footer" class="bottomStyle">
+        <p>© Antoni Climent 2025–2025 • Coded With Love</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
